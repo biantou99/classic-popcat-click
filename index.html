@@ -89,21 +89,27 @@
     let open_popcat = function(){
         pop_count++;
         cat.innerHTML = pop_count;
+
+        cat.id = "op";
+
         pop_audio = new Audio("pops/pop1.mp3")
         pop_audio.load();
         pop_audio.play();
 
-        cat.id = "op";
+
     }
     let close_popcat = function(){
         cat.id = "p";
     }
+
+function asynclose(){
+        setTimeout(close_popcat, 3000);
     document.addEventListener("keydown", open_popcat);
     document.addEventListener("pointerdown", open_popcat);
     document.addEventListener("keyup", close_popcat);
     document.addEventListener("pointerup", close_popcat);
     cat.style.backgroundImage = "imgs/op.png"
-
+}
 
 </script>
 
